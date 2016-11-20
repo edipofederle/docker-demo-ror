@@ -38,4 +38,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.cache_store = :dalli_store, "#{ENV['MEMCACHED_PORT_11211_TCP_ADDR']}:11211"
 end

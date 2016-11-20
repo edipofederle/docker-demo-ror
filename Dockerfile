@@ -6,6 +6,8 @@ MAINTAINER edipofederle@gmail.com
 # Debian image, we use apt-get to install those.
 RUN apt-get update && apt-get install -y \
   build-essential \
+  memcached \
+  libsasl2-dev \
   locales \
   nodejs
 
