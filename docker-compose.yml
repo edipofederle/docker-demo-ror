@@ -7,7 +7,16 @@ app:
     - "3000:3000"
   links:
     - postgres
+    - elasticsearch
 postgres:
   image: postgres:9.4
   ports:
     - "5432"
+
+elasticsearch:
+  build: elasticsearch/
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+  environment:
+    ES_JAVA_OPTS: "-Xms1g -Xmx1g"
